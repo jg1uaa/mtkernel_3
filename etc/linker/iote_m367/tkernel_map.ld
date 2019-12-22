@@ -48,6 +48,7 @@ SECTIONS {
 	}
 	.bss ALIGN(4) (NOLOAD) : {
 		__bss_start = .;
+		__bss_start__ = .;	/*XXX*/
 		PROVIDE (__noinit_start = .);
 		*(.noinit)
 		PROVIDE (__noinit_end = .);
@@ -56,7 +57,10 @@ SECTIONS {
 		*(COMMON)
 		. = ALIGN(4);
 		__bss_end = .;
+		__bss_end__ = .;	/*XXX*/
 		__end = .;
+		__end__ = .;		/*XXX*/
+		end = .;  		/*XXX*/
 	}
 }
 
